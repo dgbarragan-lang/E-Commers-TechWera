@@ -39,6 +39,7 @@ const selectors = {
 
 let productos = [];
 let categorias = [];
+let usuarios = [];
 let chart = null;
 let chartInstance = null;
 
@@ -46,6 +47,12 @@ const loadJsonFile = async (path) => {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`No se pudo cargar ${path}`);
   return response.json();
+};
+
+const syncProductStates = () => {
+  productos.forEach((producto) => {
+    producto.estado = getProductState(producto);
+  });
 };
 
 const saveStorage = (key, value) => localStorage.setItem(key, JSON.stringify(value));
@@ -144,17 +151,29 @@ const initializeStorage = async () => {
   try {
     const storedProductos = readStorage(STORAGE_KEYS.productos);
     const storedCategorias = readStorage(STORAGE_KEYS.categorias);
+    const storedUsuarios = readStorage(STORAGE_KEYS.usuarios);
     const storedVersion = getStoredDataVersion();
     if (storedCategorias && storedProductos && storedVersion === DATA_VERSION) {
       categorias = storedCategorias;
       productos = storedProductos;
+      syncProductStates();
+      usuarios = storedUsuarios || [];
+      if (!storedUsuarios) {
+        const defaultUsuarios = await loadJsonFile('json/usuarios.json');
+        usuarios = defaultUsuarios.map((user) => ({ ...user, password: '123456' }));
+        saveStorage(STORAGE_KEYS.usuarios, usuarios);
+      }
       return;
     }
 
     categorias = await loadJsonFile('json/categorias.json');
     productos = await loadJsonFile('json/productos.json');
+    usuarios = await loadJsonFile('json/usuarios.json');
+    syncProductStates();
+    usuarios = usuarios.map((user) => ({ ...user, password: user.password || '123456' }));
     saveStorage(STORAGE_KEYS.categorias, categorias);
     saveStorage(STORAGE_KEYS.productos, productos);
+    saveStorage(STORAGE_KEYS.usuarios, usuarios);
     setStoredDataVersion(DATA_VERSION);
   } catch (error) {
     console.error(error);
@@ -236,7 +255,7 @@ const applyFilters = () => {
   }
 
   if (stockValue !== 'all') {
-    filtered = filtered.filter((item) => item.estado === stockValue);
+    filtered = filtered.filter((item) => getProductState(item) === stockValue);
   }
 
   if (searchTerm) {
@@ -263,8 +282,8 @@ const applyFilters = () => {
 
 const renderStats = (items) => {
   const total = items.length;
-  const disponibles = items.filter((item) => item.estado === 'disponible').length;
-  const agotados = items.filter((item) => item.estado === 'agotado').length;
+  const disponibles = items.filter((item) => getProductState(item) === 'disponible').length;
+  const agotados = items.filter((item) => getProductState(item) === 'agotado').length;
   const precioPromedio = total ? items.reduce((sum, item) => sum + item.precio, 0) / total : 0;
   const mayorPrecio = total ? Math.max(...items.map((item) => item.precio)) : 0;
   const menorPrecio = total ? Math.min(...items.map((item) => item.precio)) : 0;
@@ -425,13 +444,14 @@ const getNextProductId = () => {
 const submitProductForm = (event) => {
   event.preventDefault();
   const id = selectors.productId.value;
+  const stockValue = Number(selectors.productStock.value);
   const newProduct = {
     id: id ? Number(id) : getNextProductId(),
     nombre: selectors.productName.value.trim(),
     categoriaId: Number(selectors.productCategory.value),
     precio: Number(selectors.productPrice.value),
-    stock: Number(selectors.productStock.value),
-    estado: selectors.productState.value,
+    stock: stockValue,
+    estado: getProductState({ stock: stockValue }),
     fechaRegistro: selectors.productDate.value,
     descripcion: selectors.productDescription.value.trim(),
     imagen: selectors.productImage.value.trim() || 'img/Carrito/mac.jpg'

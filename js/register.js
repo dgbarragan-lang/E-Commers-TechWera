@@ -101,6 +101,14 @@ const handleRegisterSubmit = (event) => {
     return;
   }
 
+  const stored = localStorage.getItem(registerKey);
+  const existingUsers = stored ? JSON.parse(stored) : [];
+  const emailValue = registerSelectors.email.value.trim();
+  if (existingUsers.some((user) => user.email === emailValue)) {
+    Swal.fire({ icon: 'error', title: 'Correo ya registrado', text: 'Ya existe una cuenta con este correo.' });
+    return;
+  }
+
   const countryData = getSelectedCountry();
   const user = {
     id: Date.now(),
@@ -108,6 +116,7 @@ const handleRegisterSubmit = (event) => {
     apellidos: registerSelectors.last.value.trim(),
     email: registerSelectors.email.value.trim(),
     telefono: registerSelectors.phone.value.trim(),
+    password: registerSelectors.password.value,
     fechaNacimiento: registerSelectors.dob.value,
     fechaRegistro: new Date().toISOString().split('T')[0],
     nacionalidad: {
@@ -125,6 +134,7 @@ const handleRegisterSubmit = (event) => {
   saveUser(user);
   Swal.fire({ icon: 'success', title: 'Registro exitoso', text: 'Tu cuenta se ha creado correctamente.' }).then(() => {
     registerSelectors.form.reset();
+    window.location.href = 'login.html';
   });
 };
 
