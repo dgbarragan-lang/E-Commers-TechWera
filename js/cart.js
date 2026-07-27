@@ -16,6 +16,24 @@ const getProducts = () => {
   return stored ? JSON.parse(stored) : [];
 };
 
+const updateCartProgress = () => {
+  const progress = document.querySelector('#cart-header progress');
+  const progressText = document.querySelector('#cart-header p');
+  if (!progress || !progressText) return;
+
+  const cart = getCart();
+  if (!cart.length) {
+    progress.value = 0;
+    progressText.textContent = '0% completo';
+    return;
+  }
+
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const value = Math.min(100, totalQuantity * 20);
+  progress.value = value;
+  progressText.textContent = `${value}% completo`;
+};
+
 const getCategories = () => {
   const stored = localStorage.getItem('techwear_categorias');
   return stored ? JSON.parse(stored) : [];
@@ -63,6 +81,7 @@ const renderCart = () => {
     cartElements.cartSubtotal.textContent = '$0.00';
     cartElements.cartTax.textContent = '$0.00';
     cartElements.cartTotal.textContent = '$0.00';
+    updateCartProgress();
     return;
   }
 
@@ -95,6 +114,7 @@ const renderCart = () => {
   cartElements.cartSubtotal.textContent = `$${summary.subtotal.toFixed(2)}`;
   cartElements.cartTax.textContent = `$${summary.tax.toFixed(2)}`;
   cartElements.cartTotal.textContent = `$${summary.total.toFixed(2)}`;
+  updateCartProgress();
 };
 
 const saveCartItems = (cart) => {
@@ -225,15 +245,25 @@ const initCartPage = () => {
 
     if (!result.isConfirmed) return;
 
-    saveCartItems([]);
-    renderCart();
-    Toastify({
-      text: 'Compra realizada con éxito. Gracias por tu compra.',
-      duration: 3500,
-      gravity: 'top',
-      position: 'right',
-      backgroundColor: '#16a34a'
-    }).showToast();
+    const progress = document.querySelector('#cart-header progress');
+    const progressText = document.querySelector('#cart-header p');
+    if (progress && progressText) {
+      progress.value = 100;
+      progressText.textContent = '100% completo';
+    }
+
+    setTimeout(() => {
+      saveCartItems([]);
+      renderCart();
+      updateCartProgress();
+      Toastify({
+        text: 'Compra realizada con éxito. Gracias por tu compra.',
+        duration: 3500,
+        gravity: 'top',
+        position: 'right',
+        backgroundColor: '#16a34a'
+      }).showToast();
+    }, 500);
   });
 };
 
