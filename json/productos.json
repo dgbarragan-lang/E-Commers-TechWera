@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "categoriaId": 1,
+    "nombre": "MacBook Pro 16\"",
+    "descripcion": "Laptop profesional con chip M1 Pro para edición y desarrollo.",
+    "precio": 2499.00,
+    "stock": 5,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-20",
+    "imagen": "img/Carrito/mac.jpg"
+  },
+  {
+    "id": 2,
+    "categoriaId": 1,
+    "nombre": "Dell XPS 15",
+    "descripcion": "Equipo equilibrado para productividad y diseño.",
+    "precio": 1899.00,
+    "stock": 8,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-18",
+    "imagen": "img/Carrito/dell.jpg"
+  },
+  {
+    "id": 3,
+    "categoriaId": 1,
+    "nombre": "Asus Zenbook 14",
+    "descripcion": "Ultrabook compacto con pantalla NanoEdge y batería extendida.",
+    "precio": 1399.00,
+    "stock": 9,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-19",
+    "imagen": "img/Carrito/Asus_Zenbook.jpg"
+  },
+  {
+    "id": 4,
+    "categoriaId": 1,
+    "nombre": "HP Spectre x360",
+    "descripcion": "Convertible 2 en 1 con pantalla táctil y diseño premium.",
+    "precio": 1599.00,
+    "stock": 6,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-21",
+    "imagen": "img/Carrito/HP_Spectre.jpg"
+  },
+  {
+    "id": 5,
+    "categoriaId": 2,
+    "nombre": "Samsung Odyssey G7",
+    "descripcion": "Monitor curvo QHD 240Hz para gaming y edición.",
+    "precio": 799.00,
+    "stock": 4,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-16",
+    "imagen": "img/Carrito/Samsung_Odyssey.jpg"
+  },
+  {
+    "id": 6,
+    "categoriaId": 2,
+    "nombre": "LG UltraFine 27",
+    "descripcion": "Monitor 27 pulgadas 4K para trabajo creativo y diseño.",
+    "precio": 629.00,
+    "stock": 5,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-22",
+    "imagen": "img/Carrito/LG_UltraFine.jpg"
+  },
+  {
+    "id": 7,
+    "categoriaId": 2,
+    "nombre": "Acer Nitro 27",
+    "descripcion": "Monitor gaming con tasa de refresco alta y compatibilidad FreeSync.",
+    "precio": 479.00,
+    "stock": 11,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-17",
+    "imagen": "img/Carrito/Acer_Nitro.jpg"
+  },
+  {
+    "id": 8,
+    "categoriaId": 3,
+    "nombre": "Wireless Mouse MX Master",
+    "descripcion": "Ratón inalámbrico ergonómico con control de precisión.",
+    "precio": 99.00,
+    "stock": 20,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-12",
+    "imagen": "img/Carrito/raton.jpg"
+  },
+  {
+    "id": 9,
+    "categoriaId": 5,
+    "nombre": "Mechanical Keyboard RGB",
+    "descripcion": "Teclado mecánico con retroiluminación personalizable.",
+    "precio": 149.00,
+    "stock": 12,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-13",
+    "imagen": "img/Carrito/teclado.jpg"
+  },
+  {
+    "id": 10,
+    "categoriaId": 5,
+    "nombre": "Razer Huntsman V2",
+    "descripcion": "Teclado gaming con switches ópticos y descanso ergonómico.",
+    "precio": 199.00,
+    "stock": 7,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-14",
+    "imagen": "img/Carrito/Razer_Huntsman.jpg"
+  },
+  {
+    "id": 11,
+    "categoriaId": 4,
+    "nombre": "Gaming Headset Pro",
+    "descripcion": "Auriculares con micrófono y sonido envolvente.",
+    "precio": 199.00,
+    "stock": 10,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-11",
+    "imagen": "img/Carrito/auriculares.jpg"
+  },
+  {
+    "id": 12,
+    "categoriaId": 4,
+    "nombre": "Sony WH-1000XM5",
+    "descripcion": "Auriculares con cancelación de ruido y audio de alta fidelidad.",
+    "precio": 349.00,
+    "stock": 5,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-10",
+    "imagen": "img/Carrito/Sony_WH.jpg"
+  },
+  {
+    "id": 13,
+    "categoriaId": 6,
+    "nombre": "Canon PIXMA G7020",
+    "descripcion": "Impresora multifunción con sistema de tinta recargable.",
+    "precio": 279.00,
+    "stock": 9,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-09",
+    "imagen": "img/Carrito/Canon_PIXMA.jpg"
+  },
+  {
+    "id": 14,
+    "categoriaId": 6,
+    "nombre": "Epson EcoTank L3250",
+    "descripcion": "Impresora inkjet con bajo costo por página.",
+    "precio": 219.00,
+    "stock": 8,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-08",
+    "imagen": "img/Carrito/Epson_EcoTank.jpg"
+  },
+  {
+    "id": 15,
+    "categoriaId": 7,
+    "nombre": "TP-Link Archer AX55",
+    "descripcion": "Router Wi-Fi 6 para redes domésticas de alta velocidad.",
+    "precio": 99.00,
+    "stock": 14,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-07",
+    "imagen": "img/Carrito/TP-Link_Archer.jpg"
+  },
+  {
+    "id": 16,
+    "categoriaId": 7,
+    "nombre": "Netgear Nighthawk AX12",
+    "descripcion": "Router gaming con cobertura amplia y puertos multi-Gig.",
+    "precio": 299.00,
+    "stock": 6,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-06",
+    "imagen": "img/Carrito/Netgear_Nighthawk.jpg"
+  },
+  {
+    "id": 17,
+    "categoriaId": 8,
+    "nombre": "Seagate FireCuda 1TB",
+    "descripcion": "SSD portátil de alto rendimiento para almacenamiento rápido.",
+    "precio": 149.00,
+    "stock": 18,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-05",
+    "imagen": "img/Carrito/Seagate_FireCuda.jpg"
+  },
+  {
+    "id": 18,
+    "categoriaId": 8,
+    "nombre": "Samsung T7 Shield 1TB",
+    "descripcion": "Disco SSD externo resistente y con velocidad USB-C.",
+    "precio": 159.00,
+    "stock": 16,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-04",
+    "imagen": "img/Carrito/Samsung_T7.jpg"
+  },
+  {
+    "id": 19,
+    "categoriaId": 9,
+    "nombre": "Adobe Creative Cloud",
+    "descripcion": "Suscripción anual para herramientas de diseño y edición.",
+    "precio": 599.00,
+    "stock": 999,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-03",
+    "imagen": "img/Carrito/Adobe_Creative.jpg"
+  },
+  {
+    "id": 20,
+    "categoriaId": 9,
+    "nombre": "Microsoft Office 365",
+    "descripcion": "Suite ofimática en la nube para trabajo y estudio.",
+    "precio": 129.00,
+    "stock": 999,
+    "estado": "disponible",
+    "fechaRegistro": "2026-07-02",
+    "imagen": "img/Carrito/Microsoft_Office.jpg"
+  }
+]

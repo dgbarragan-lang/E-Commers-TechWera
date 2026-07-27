@@ -1,0 +1,441 @@
+/* ============================================================
+   BLOQUE 1: SECCIÓN HERO (BIENVENIDA)
+    Estilos para la sección de bienvenida.
+   ============================================================ */
+
+#hero {
+    background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(15,23,40,0.95));
+    padding: 40px 24px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(15, 23, 40, 0.45);
+    margin-bottom: 32px;
+}
+
+#hero h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+#hero p {
+    max-width: 760px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.05rem;
+    color: #dbeafe;
+    text-align: center;
+}
+
+/* GRID: Lista de beneficios */
+#hero .hero-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    list-style: none;
+    margin-top: 1.5rem;
+    padding: 0;
+    width: 100%;
+}
+
+#hero .hero-list li {
+    background-color: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.28);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    color: #bfdbfe;
+    font-weight: 500;
+}
+
+/* ============================================================
+   BLOQUE 2: TARJETA SECUNDARIA
+    Estilos para tarjetas de información secundaria.
+     Aplicación de Box Model, Flexbox y Grid.
+   ============================================================ */
+
+.card-secondary {
+    background-color: rgba(255,255,255,0.04);
+    border: 1px solid rgba(59,130,246,0.24);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 12px rgba(15, 23, 40, 0.25);
+}
+
+.card-secondary:hover {
+    background-color: rgba(255,255,255,0.06);
+    border-color: rgba(59,130,246,0.35);
+}
+
+/* ============================================================
+   BLOQUE 3: SECCIÓN DE PRODUCTOS DESTACADOS
+    Estilos para la tabla de productos destacados.
+      Aplicación de Box Model, Flexbox y Grid.
+      Diseño responsivo con tablas.
+   ============================================================ */
+
+#featured-products {
+    padding-top: 10px;
+    margin-bottom: 32px;
+}
+
+#featured-products h2 {
+    color: #93c5fd;
+    border-color: #93c5fd;
+    margin-bottom: 0;
+}
+
+#featured-products .product-table {
+    overflow-x: auto;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 20px;
+}
+
+#featured-products table {
+    min-width: 720px;
+    width: 100%;
+}
+
+#featured-products th {
+    background-color: rgba(59, 130, 246, 0.12);
+    padding: 14px 18px;
+    text-align: left;
+    color: #dbeafe;
+    font-weight: 700;
+}
+
+#featured-products td {
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    vertical-align: middle;
+}
+
+#featured-products tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+#featured-products tbody tr:hover {
+    background-color: rgba(59,130,246,0.08);
+}
+
+#featured-products img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(59, 130, 246, 0.16);
+}
+
+/* Precio destacado */
+.text-price {
+    color: #60a5fa;
+    font-size: 1.05rem;
+}
+
+/* ============================================================
+   BLOQUE 4: BADGES DE CATEGORÍA EN TABLA
+    Estilos para badges de categoría en la tabla de productos.
+     Aplicación de Box Model, Flexbox y Grid.
+   ============================================================ */
+
+.badge-cat {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+.badge-cat--laptop  { background-color: rgba(99,102,241,0.20); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.35); }
+.badge-cat--acc     { background-color: rgba(16,185,129,0.18); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.32); }
+.badge-cat--monitor { background-color: rgba(14,165,233,0.18); color: #7dd3fc; border: 1px solid rgba(14,165,233,0.32); }
+.badge-cat--audio   { background-color: rgba(245,158,11,0.18); color: #fcd34d; border: 1px solid rgba(245,158,11,0.32); }
+.badge-cat--other   { background-color: rgba(148,163,184,0.18); color: #cbd5e1; border: 1px solid rgba(148,163,184,0.32); }
+
+/* ============================================================
+   BLOQUE 5: BOTONES
+    Estilos para botones de acción.
+     Aplicación de Box Model, Flexbox y Grid.
+   ============================================================ */
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: #fff;
+    border: 1px solid #2563eb;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary {
+    background-color: rgba(255,255,255,0.08);
+    color: #e6eef6;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.22);
+}
+
+.controls-grid,
+.stats-grid,
+.weather-card-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.controls-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(59,130,246,0.18);
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-card span {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.stat-card strong {
+    font-size: 1.35rem;
+    color: #e6eef6;
+}
+
+.product-form .grid-form {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.product-form .full-width {
+    grid-column: 1 / -1;
+}
+
+.product-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.product-form input,
+.product-form textarea,
+.product-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background-color: rgba(255,255,255,0.04);
+    color: #e6eef6;
+}
+
+.product-form input:focus,
+.product-form textarea:focus,
+.product-form select:focus {
+    outline: none;
+    border-color: #60a5fa;
+    background-color: rgba(255,255,255,0.06);
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.1);
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.weather-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(59,130,246,0.18);
+    border-radius: 18px;
+    padding: 22px;
+    min-height: 160px;
+}
+
+.weather-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.weather-card-grid div {
+    background: rgba(15,23,40,0.9);
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.weather-card-grid strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #cbd5e1;
+}
+
+.weather-card-grid p {
+    margin: 0;
+    color: #e6eef6;
+    font-weight: 600;
+}
+
+#product-form-section.d-none {
+    display: none;
+}
+
+.section-description {
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.result-count {
+    align-self: flex-end;
+    justify-self: end;
+    padding-top: 24px;
+    color: #e6eef6;
+}
+
+@media (max-width: 768px) {
+    .result-count {
+        justify-self: stretch;
+        align-self: stretch;
+        padding-top: 0;
+    }
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Variante compacta para la tabla */
+.btn-sm-table {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.btn-secondary {
+    background-color: rgba(255,255,255,0.08);
+    color: #e6eef6;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.22);
+}
+
+/* ============================================================
+   BLOQUE 6: BADGE GENERAL (hero, etc.)
+    Estilos para badges generales usados en varias secciones.
+     Aplicación de Box Model, Flexbox y Grid.
+     Diseño responsivo con tablas.
+     Inspiración en badges de Tailwind y Bootstrap.
+     Se pueden usar para categorías, etiquetas, estados, etc.
+     Se pueden extender con clases adicionales para colores específicos.
+     Ejemplo: <span class="badge badge-popular">Popular</span>
+   ============================================================ */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background-color: rgba(59,130,246,0.14);
+    color: #bfdbfe;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    border: 1px solid rgba(59, 130, 246, 0.22);
+}
+
+/* Bootstrap badges (bg-primary, bg-danger, etc.) — no pisar */
+.badge.rounded-pill.bg-primary { background-color: #2563eb !important; color: #fff; border: none; }
+.badge.bg-danger               { background-color: #dc2626 !important; color: #fff; border: none; }
+
+/* ============================================================
+   BLOQUE 7: NOTAS E INFORMACIÓN
+    Estilos para notas informativas, tips, etc.
+     Aplicación de Box Model, Flexbox y Grid.
+     Inspiración en alertas de Tailwind y Bootstrap.
+     Se pueden usar para mensajes de ayuda, tips, información adicional, etc.
+     Ejemplo: <div class="info-note">Nota importante sobre el producto.</div>
+     Se pueden extender con clases adicionales para colores específicos.
+   ============================================================ */
+
+#hero .info-note {
+    font-size: 0.95rem;
+    color: #c7d2fe;
+    margin-top: 18px;
+    padding: 12px 16px;
+    border-left: 3px solid #3b82f6;
+    background-color: rgba(59, 130, 246, 0.08);
+    border-radius: 6px;
+}
+
+/* ============================================================
+   BLOQUE 8: BLOQUES DE CÓDIGO / MUESTRAS DE DATOS
+    Estilos para bloques de código, muestras de datos, etc.
+     Aplicación de Box Model, Flexbox y Grid.
+     Inspiración en estilos de código de Tailwind y Bootstrap.
+     Se pueden usar para mostrar fragmentos de código, datos técnicos, etc.
+     Ejemplo: <pre class="code-sample">Código o datos aquí</pre>
+     Se pueden extender con clases adicionales para colores específicos.
+   ============================================================ */
+
+.code-sample {
+    background-color: #071024;
+    border-radius: 8px;
+    overflow: auto;
+    color: #dbeafe;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.badge-popular {
+    font-size: 0.7rem;
+    padding: 0.35em 0.6em;
+}

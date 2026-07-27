@@ -1,0 +1,226 @@
+/* ============================================================
+   BLOQUE 1: PÁGINA DE REGISTRO
+   Estilos propios de la página de registro.
+   Aplicación de Box Model y Flexbox para formularios.
+   ============================================================ */
+
+#register-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+    padding: 24px 16px;
+}
+
+#signup-panel {
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 28px 26px;
+    border-radius: 24px;
+    background-color: rgba(15,23,40,0.96);
+    border: 1px solid rgba(59,130,246,0.22);
+    box-shadow: 0 10px 40px rgba(15, 23, 40, 0.6);
+}
+
+#signup-panel h2 {
+    text-align: center;
+    margin-bottom: 14px;
+    color: #dbeafe;
+}
+
+#signup-panel hr {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 24px 0;
+}
+
+/* ============================================================
+   BLOQUE 2: FORMULARIO CON FLEXBOX Y GRID
+   Estilos reutilizables mediante clases.
+   Organización responsiva con Grid.
+   ============================================================ */
+
+.register-form {
+    display: grid;
+    gap: 18px;
+}
+
+.register-form .form-row {
+    display: grid;
+    gap: 8px;
+}
+
+.register-form label {
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.register-form input,
+.register-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #e6eef6;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.register-form input::placeholder,
+.register-form select::placeholder {
+    color: #64748b;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+    outline: none;
+    border-color: #60a5fa;
+    background-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+/* FLEXBOX: Organización en dos columnas responsiva */
+.register-form .form-row-inline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+/* Checkboxes con Flexbox */
+.register-form .checkbox-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 0;
+}
+
+.register-form .checkbox-group input[type="checkbox"] {
+    width: auto;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.register-form .checkbox-group label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/* ============================================================
+   BLOQUE 3: BOTONES
+   Estilos para botones de formulario.
+   ============================================================ */
+
+.register-form button {
+    width: 100%;
+    max-width: 280px;
+    justify-self: center;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #3b82f6;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+}
+
+.register-form button:hover {
+    background-color: #2563eb;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+.register-form button:active {
+    transform: translateY(0);
+}
+
+/* ============================================================
+   BLOQUE 4: TEXTO DE AYUDA
+   Estilos para mensajes y ayuda.
+   ============================================================ */
+
+#signup-panel .help-text {
+    color: #94a3b8;
+    font-size: 0.90rem;
+    margin-top: -6px;
+    margin-bottom: 4px;
+}
+
+.form-note {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.form-link {
+    color: #bfdbfe;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.form-link:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   BLOQUE 5: ESTADOS Y ACCESIBILIDAD
+   Estilos para validación y accesibilidad.
+   ============================================================ */
+
+#signup-panel label {
+    color: #cbd5e1;
+}
+
+#signup-panel input,
+#signup-panel select {
+    background-color: rgba(255,255,255,0.04);
+}
+
+#signup-panel input:focus,
+#signup-panel select:focus {
+    border-color: #60a5fa;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Estados de validación */
+input:invalid:not(:placeholder-shown) {
+    border-color: #f87171;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: #4ade80;
+}
+
+/* Responsive: En pantallas pequeñas, columna única */
+@media (max-width: 640px) {
+    .register-form .form-row-inline {
+        grid-template-columns: 1fr;
+    }
+    
+    #signup-panel {
+        padding: 20px 16px;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .checkbox-group label {
+        width: 100%;
+    }
+
+    .register-form button {
+        max-width: 100%;
+    }
+}

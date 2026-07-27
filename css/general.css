@@ -1,0 +1,811 @@
+/* ============================================================
+   BLOQUE 1: CONFIGURACIÓN GENERAL
+    Estilos globales para toda la página.
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f1720;
+    color: #e6eef6;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ============================================================
+   BLOQUE 2: TÍTULOS, PÁRRAFOS Y ENLACES
+   definición de estilos para elementos de texto.
+   ============================================================ */
+
+h1 {
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    color: #e6eef6;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+    color: #dbeafe;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.8rem;
+    color: #cbd5e1;
+}
+
+p {
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+i {
+    font-size: 1rem;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* ============================================================
+   BLOQUE 3: HEADER
+    Estilos para el encabezado y navegación.
+   ============================================================ */
+
+header,
+.navbar-header {
+    background-color: #111827;
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cart-badge {
+    display: inline-flex;
+    min-width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background-color: #2563eb;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+header > div,
+.navbar-header > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+header nav,
+.navbar-header nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav[aria-label="Principal"] {
+    width: 100%;
+}
+
+header a,
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #e6eef6;
+    text-decoration: none;
+}
+
+nav[aria-label="Principal"] a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    color: #e6eef6;
+    background-color: rgba(59, 130, 246, 0.18);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+header a:hover,
+.brand-link:hover {
+    color: #e6eef6;
+    text-decoration: none;
+}
+
+header a img,
+.brand-link img {
+    width: 32px !important;
+    height: 32px !important;
+    object-fit: contain;
+    border-radius: 4px !important;
+    border: none !important;
+}
+
+/* Menú de navegación principal */
+nav ul {
+    justify-content: center;
+}
+
+nav[aria-label="Principal"] {
+    margin-top: 0;
+}
+
+nav[aria-label="Principal"] ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav[aria-label="Principal"] a.active {
+    background-color: #1d4ed8;
+    color: #fff;
+    border-color: #1e40af;
+}
+
+nav[aria-label="Principal"] a:hover {
+    background-color: #3b82f6;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ============================================================
+   BLOQUE 4: NAV CATEGORÍAS
+    Estilos para la barra de categorías.
+   ============================================================ */
+
+.categories-nav {
+    background-color: #0f1720;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 8px 0;
+}
+
+.btn-cat {
+    background-color: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.30);
+    color: #bfdbfe;
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 0.83rem;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.btn-cat:hover {
+    background-color: rgba(59, 130, 246, 0.28);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ============================================================
+   BLOQUE 5: MAIN Y SECCIONES
+    Estilos para el contenido principal.
+   ============================================================ */
+
+main {
+    margin: 0 auto;
+    padding: 24px 16px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+section,
+article,
+aside {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    margin-bottom: 24px;
+    padding: 20px;
+}
+
+section {
+    overflow: hidden;
+}
+
+article {
+    overflow: hidden;
+}
+
+aside {
+    overflow: hidden;
+}
+
+main ul {
+    display: inline-block;
+}
+
+main aside,
+main p,
+main div {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2px 16px;
+}
+
+main h1,
+main h2,
+main h3 {
+    padding: 2px 16px;
+    text-align: center;
+}
+
+/* ============================================================
+   BLOQUE 6: IMÁGENES
+    Estilos para imágenes y multimedia.
+   ============================================================ */
+
+img {
+    width: 150px;
+    max-width: 150px;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 4px;
+    border: none;
+    margin-right: 8px;
+}
+
+/* ============================================================
+   BLOQUE 7: LISTAS
+    Estilos para listas ordenadas y desordenadas.
+   ============================================================ */
+
+ul,
+ol {
+    margin: 1rem 0 1rem 1.25rem;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   BLOQUE 8: FORMULARIOS
+    Estilos para formularios, inputs y botones.
+   ============================================================ */
+
+form {
+    margin: 1.5rem 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #e6eef6;
+}
+
+select option {
+    color: #0f1720;
+    background-color: #ffffff;
+}
+
+/* Newsletter input adaptado */
+.newsletter-input {
+    background-color: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    color: #e6eef6 !important;
+    border-radius: 8px 0 0 8px !important;
+}
+.newsletter-input::placeholder { color: #94a3b8; }
+.newsletter-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.4);
+    border-color: #3b82f6 !important;
+}
+
+.newsletter-btn {
+    border-radius: 0 8px 8px 0 !important;
+    padding: 6px 14px !important;
+    font-size: 0.85rem !important;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #3b82f6;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* ============================================================
+   BLOQUE 9: TABLAS
+    Estilos para tablas de productos, resúmenes, etc.
+   ============================================================ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+thead {
+    background-color: rgba(59, 130, 246, 0.12);
+}
+
+th {
+    padding: 12px 16px;
+    text-align: left;
+    color: #dbeafe;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.25);
+}
+
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+}
+
+/* ============================================================
+   BLOQUE 10: UTILITY CLASSES
+    Clases de utilidad para espaciado, flexbox, etc.
+   ============================================================ */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.gap-sm { gap: 8px; }
+.gap-md { gap: 14px; }
+.gap-lg { gap: 20px; }
+
+.p-xs { padding: 4px; }
+.p-sm { padding: 8px; }
+.p-md { padding: 14px; }
+.p-lg { padding: 20px; }
+
+.m-sm { margin: 8px; }
+.m-md { margin: 14px; }
+.m-lg { margin: 20px; }
+
+.mb-xs { margin-bottom: 4px; }
+.mb-sm { margin-bottom: 8px; }
+.mb-md { margin-bottom: 14px; }
+.mb-lg { margin-bottom: 20px; }
+
+/* ============================================================
+   BLOQUE 11: FOOTER
+    Estilos para el pie de página.
+   ============================================================ */
+
+footer {
+    background-color: #111827;
+    padding: 36px 0 16px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer h4 {
+    color: #e6eef6;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+footer p,
+footer address {
+    text-align: left;
+    color: #94a3b8;
+    font-size: 0.93rem;
+    margin: 0 0 6px;
+}
+
+footer a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+footer a:hover {
+    color: #e6eef6;
+    text-decoration: none;
+}
+
+footer .container > p {
+    text-align: center;
+    color: #64748b;
+    font-size: 0.88rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 14px;
+    margin-top: 8px;
+}
+
+/* ============================================================
+   BLOQUE 12: MULTIMEDIA AVANZADA
+    Estilos para figuras, videos, audio, iframes.
+   ============================================================ */
+
+figure {
+    margin: 20px auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin-top: 8px;
+}
+
+video,
+audio,
+iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 12px auto;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+video {
+    height: auto;
+    max-height: 360px;
+}
+
+audio {
+    width: 100%;
+    max-width: 500px;
+}
+
+iframe {
+    min-height: 240px;
+}
+
+/* ============================================================
+   BLOQUE 13: FORMULARIOS AVANZADOS
+    Estilos para inputs específicos, estados de validación, etc.
+   ============================================================ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    height: auto;
+}
+
+input[type="time"] {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+select {
+    color: #e6eef6;
+}
+
+button[type="reset"] {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #e6eef6;
+    margin-left: 8px;
+}
+
+button[type="reset"]:hover {
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #3b82f6;
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+input:required,
+select:required,
+textarea:required {
+    border-left: 3px solid #3b82f6;
+}
+
+/* ============================================================
+   BLOQUE 14: TABLAS AVANZADAS
+    Estilos para tablas con paginación, ordenables, etc.
+   ============================================================ */
+
+caption {
+    font-weight: bold;
+    color: #dbeafe;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+thead th {
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ============================================================
+   BLOQUE 15: DETAILS, PROGRESS, METER
+    Estilos para elementos interactivos y de progreso.
+   ============================================================ */
+
+details {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    margin: 24px auto;
+    max-width: 1100px;
+}
+
+summary {
+    font-weight: bold;
+    color: #e6eef6;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+progress {
+    width: 100%;
+    max-width: 260px;
+    height: 26px;
+    accent-color: #3b82f6;
+}
+
+meter {
+    width: 100%;
+    max-width: 260px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================================
+   BLOQUE 16: TEXTO TÉCNICO
+    Estilos para code, pre, kbd.
+   ============================================================ */
+
+code,
+kbd {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #dbeafe;
+}
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+    color: #e6eef6;
+    overflow-x: auto;
+}
+
+/* ============================================================
+   BLOQUE 17: ALERTA BOOTSTRAP — ADAPTACIÓN AL TEMA OSCURO
+    Estilos para alertas informativas.
+   ============================================================ */
+
+.alert-info {
+    background-color: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.30);
+    color: #bfdbfe;
+}
+
+.alert-info .btn-close {
+    filter: invert(1) brightness(0.8);
+}
+
+.alert-info code {
+    color: #93c5fd;
+    background-color: rgba(59,130,246,0.15);
+}
+
+/* ============================================================
+   BLOQUE 18: RESPONSIVIDAD
+    Ajustes para pantallas pequeñas.
+   ============================================================ */
+
+@media (max-width: 700px) {
+    .navbar-header .d-flex {
+        flex-wrap: wrap;
+    }
+
+    #mainNav {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #mainNav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #mainNav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        padding: 18px 12px;
+    }
+
+    section,
+    article,
+    aside,
+    details {
+        padding: 16px;
+        margin-bottom: 18px;
+    }
+
+    img,
+    header img {
+        width: auto;
+        max-width: 100%;
+    }
+
+    header img {
+        max-height: 36px;
+    }
+
+    table,
+    .product-table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+    }
+
+    ul,
+    ol {
+        margin-left: 1rem;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    form {
+        margin: 1rem 0;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+        font-size: 0.97rem;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    footer p {
+        text-align: center;
+    }
+}

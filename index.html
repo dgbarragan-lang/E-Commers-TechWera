@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TechWear Shop — Inicio</title>
+    <link rel="icon" href="img/logo/icon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <!-- ── HEADER ── -->
+      <header class="navbar-header">
+        <div>
+          <a class="brand-link" href="index.html">
+            <img src="img/logo/logo.png" alt="logo de TechWear Shop" />
+            TechWear Shop
+          </a>
+          <nav aria-label="Principal">
+            <ul>
+              <li>
+                <a class="active" href="index.html">
+                  <i class="fa-solid fa-house"></i> Inicio
+                </a>
+              </li>
+              <li>
+                <a href="pages/cart.html">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Carrito <span id="cartCount" class="cart-badge">0</span>
+                </a>
+              </li>
+              <li>
+                <a id="loginLink" href="pages/login.html">
+                  <i class="fa-solid fa-user"></i> Ingresar
+                </a>
+              </li>
+              <li>
+                <a id="logoutLink" href="#" class="d-none">
+                  <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ── ASIDE: ÍCONOS SOCIALES ── -->
+      <aside class="social-icons">
+        <h2>
+          <i class="fa-solid fa-house"></i>
+          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-envelope"></i>
+          <i class="fa-solid fa-phone"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-solid fa-heart"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </h2>
+      </aside>
+
+      <!-- ── NAV CATEGORÍAS ── -->
+      <nav aria-label="Categorías" class="categories-nav">
+        <div class="container">
+          <ul class="d-flex flex-wrap gap-2 list-unstyled mb-0 py-2">
+            <li><a href="#" class="btn btn-sm btn-cat">💻 Portátiles</a></li>
+            <li><a href="#" class="btn btn-sm btn-cat">🖥️ Monitores</a></li>
+            <li><a href="#" class="btn btn-sm btn-cat">🖱️ Accesorios</a></li>
+            <li><a href="#" class="btn btn-sm btn-cat">🎧 Audio</a></li>
+            <li><a href="#" class="btn btn-sm btn-cat">⌨️ Teclados</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- ── ALERTA FLASH ── -->
+      <div class="container mt-3">
+        <div
+          class="alert alert-info alert-dismissible fade show d-flex align-items-center gap-2"
+          role="alert"
+        >
+          <i class="fa-solid fa-bolt-lightning fs-5"></i>
+          <span
+            ><strong>¡Oferta flash!</strong> 15% de descuento en portátiles este
+            fin de semana. Código: <code>TECH15</code></span
+          >
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="alert"
+            aria-label="Cerrar"
+          ></button>
+        </div>
+      </div>
+
+      <main>
+        <!-- ── HERO ── -->
+        <section id="hero">
+          <div class="card-secondary">
+            <span class="badge mb-3">✨ Bienvenido</span>
+            <h1>Bienvenido a TechWear Shop</h1>
+            <p>
+              Descubre los últimos productos tecnológicos con ofertas exclusivas
+              y envíos rápidos
+            </p>
+            <ul class="hero-list">
+              <li><i class="fa-solid fa-truck-fast me-1"></i>Envíos rápidos</li>
+              <li><i class="fa-solid fa-star me-1"></i>Productos de calidad</li>
+              <li><i class="fa-solid fa-headset me-1"></i>Soporte 24/7</li>
+            </ul>
+            <div class="text-center mt-3">
+              <a href="#featured-products" class="btn-primary">
+                Ver productos <i class="fa-solid fa-arrow-down ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── PRODUCTOS DESTACADOS ── -->
+        <section id="featured-products" aria-labelledby="featured-title">
+          <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+            <div>
+              <h2 id="featured-title" class="mb-1">Productos disponibles</h2>
+              <p class="section-description">Carga dinámica desde JSON + filtros, ordenamiento y operaciones CRUD.</p>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <button id="btn-toggle-form" class="btn-primary">Nuevo producto</button>
+              <button id="btn-reset-data" class="btn-secondary">Restaurar datos</button>
+            </div>
+          </div>
+
+          <div class="card-secondary controls-grid mb-4">
+            <div class="control-item">
+              <label for="searchInput">Buscar productos</label>
+              <input id="searchInput" type="search" placeholder="Nombre, categoría, descripción" />
+            </div>
+            <div class="control-item">
+              <label for="categoryFilter">Filtrar por categoría</label>
+              <select id="categoryFilter">
+                <option value="all">Todas las categorías</option>
+              </select>
+            </div>
+            <div class="control-item">
+              <label for="stockFilter">Disponibilidad</label>
+              <select id="stockFilter">
+                <option value="all">Todos los estados</option>
+                <option value="disponible">Disponible</option>
+                <option value="agotado">Agotado</option>
+              </select>
+            </div>
+            <div class="control-item">
+              <label for="sortSelect">Ordenar por</label>
+              <select id="sortSelect">
+                <option value="latest">Fecha reciente</option>
+                <option value="priceAsc">Precio menor a mayor</option>
+                <option value="priceDesc">Precio mayor a menor</option>
+                <option value="nameAsc">Nombre A-Z</option>
+                <option value="nameDesc">Nombre Z-A</option>
+              </select>
+            </div>
+            <div class="control-item result-count">
+              <span id="resultCount">20 productos</span>
+            </div>
+          </div>
+
+          <div id="product-stats" class="stats-grid mb-4"></div>
+
+          <div id="product-form-section" class="card-secondary mb-4 d-none">
+            <h3 id="product-form-title">Agregar nuevo producto</h3>
+            <form id="productForm" class="product-form">
+              <input type="hidden" id="productId" />
+              <div class="grid-form">
+                <div>
+                  <label for="productName">Nombre</label>
+                  <input id="productName" type="text" required />
+                </div>
+                <div>
+                  <label for="productCategory">Categoría</label>
+                  <select id="productCategory" required></select>
+                </div>
+                <div>
+                  <label for="productPrice">Precio</label>
+                  <input id="productPrice" type="number" step="0.01" min="0" required />
+                </div>
+                <div>
+                  <label for="productStock">Stock</label>
+                  <input id="productStock" type="number" min="0" required />
+                </div>
+                <div>
+                  <label for="productState">Estado</label>
+                  <select id="productState" required>
+                    <option value="disponible">Disponible</option>
+                    <option value="agotado">Agotado</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="productDate">Fecha de registro</label>
+                  <input id="productDate" type="date" required />
+                </div>
+                <div class="full-width">
+                  <label for="productDescription">Descripción</label>
+                  <textarea id="productDescription" rows="3" required></textarea>
+                </div>
+                <div class="full-width">
+                  <label for="productImage">Ruta de imagen</label>
+                  <input id="productImage" type="text" placeholder="img/Carrito/nombre.jpg" required />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Guardar producto</button>
+                <button type="button" id="btnCancelProduct" class="btn-secondary">Cancelar</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="product-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Producto</th>
+                  <th>Categoría</th>
+                  <th>Precio</th>
+                  <th>Stock</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="productTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="chart-card card-secondary mt-4">
+            <h3>Productos por categoría</h3>
+            <canvas id="categoryChart" width="100" height="40"></canvas>
+          </div>
+        </section>
+      </main>
+
+      <section id="external-api" class="container mb-4">
+        <div class="card-secondary weather-section">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+            <div>
+              <h2>Clima en ciudades seleccionadas</h2>
+              <p class="section-description">Consulta el clima actual mediante la API Open-Meteo.</p>
+            </div>
+            <div class="weather-buttons d-flex flex-wrap gap-2">
+              <button class="btn-secondary weather-btn" data-lat="-0.18" data-lng="-78.47">Quito</button>
+              <button class="btn-secondary weather-btn" data-lat="-2.17" data-lng="-79.90">Guayaquil</button>
+              <button class="btn-secondary weather-btn" data-lat="-1.03" data-lng="-79.46">Quevedo</button>
+              <button class="btn-secondary weather-btn" data-lat="-0.25" data-lng="-79.15">Santo Domingo</button>
+            </div>
+          </div>
+          <div id="weatherCard" class="weather-card mt-4">
+            <p class="text-muted">Selecciona una ciudad para mostrar el clima.</p>
+          </div>
+        </div>
+      </section>
+</main>
+
+      <!-- ── FOOTER ── -->
+      <footer>
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-12 col-md-4">
+              <h4>TechWear Shop</h4>
+              <p>
+                La mejor tienda de tecnología — envíos rápidos y soporte 24/7.
+              </p>
+              <div class="d-flex gap-3 fs-5 mt-2">
+                <a href="#" aria-label="Facebook"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+                <a href="#" aria-label="Instagram"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="Twitter"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-6 col-md-2">
+              <h4>Empresa</h4>
+              <div class="d-flex flex-column gap-1">
+                <a href="#">Nosotros</a>
+                <a href="#">Carreras</a>
+                <a href="#">Prensa</a>
+              </div>
+            </div>
+            <div class="col-6 col-md-2">
+              <h4>Soporte</h4>
+              <div class="d-flex flex-column gap-1">
+                <a href="#"
+                  ><i class="fa-solid fa-envelope me-1"></i>Centro de ayuda</a
+                >
+                <a href="#"><i class="fa-solid fa-truck me-1"></i>Envíos</a>
+                <a href="#">Devoluciones</a>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <h4>Newsletter</h4>
+              <p>Recibe ofertas exclusivas en tu correo.</p>
+              <div class="input-group input-group-sm">
+                <input
+                  type="email"
+                  class="form-control newsletter-input"
+                  placeholder="tu@correo.com"
+                />
+                <button class="btn-primary newsletter-btn" type="button">
+                  Suscribirse
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-3">
+          <p>&copy; 2026 TechWear Shop. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Toastify -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- App JS -->
+    <script src="js/main.js"></script>
+    <!-- Bootstrap JS (bundle con Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

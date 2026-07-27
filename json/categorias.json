@@ -1,0 +1,12 @@
+[
+  { "id": 1, "nombre": "Portátiles" },
+  { "id": 2, "nombre": "Monitores" },
+  { "id": 3, "nombre": "Accesorios" },
+  { "id": 4, "nombre": "Audio" },
+  { "id": 5, "nombre": "Teclados" },
+  { "id": 6, "nombre": "Impresoras" },
+  { "id": 7, "nombre": "Redes" },
+  { "id": 8, "nombre": "Almacenamiento" },
+  { "id": 9, "nombre": "Software" },
+  { "id": 10, "nombre": "Gaming" }
+]
