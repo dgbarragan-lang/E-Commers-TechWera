@@ -33,6 +33,7 @@ const mapCategoryName = (categoriaId) => {
 };
 
 const findProduct = (id) => getProducts().find((product) => product.id === Number(id));
+const getProductState = (product) => (product.stock === 0 ? 'agotado' : 'disponible');
 
 const normalizeImagePath = (path) => {
   if (!path) return '';
@@ -127,12 +128,15 @@ const changeQuantity = (productId, delta) => {
     // Si la cantidad llega a 0, eliminar el item del carrito
     if (item.quantity === 0) {
       const filtered = cart.filter((c) => c.productId !== Number(productId));
+      products[prodIndex].estado = getProductState(products[prodIndex]);
       saveCartItems(filtered);
       localStorage.setItem('techwear_productos', JSON.stringify(products));
       renderCart();
       return;
     }
   }
+
+  products[prodIndex].estado = getProductState(products[prodIndex]);
 
   // Persist cambios en productos y carrito
   localStorage.setItem('techwear_productos', JSON.stringify(products));
@@ -150,6 +154,7 @@ const removeCartItem = (productId) => {
   const prodIndex = products.findIndex((p) => p.id === Number(productId));
   if (prodIndex !== -1) {
     products[prodIndex].stock = products[prodIndex].stock + item.quantity;
+    products[prodIndex].estado = getProductState(products[prodIndex]);
     localStorage.setItem('techwear_productos', JSON.stringify(products));
   }
 
