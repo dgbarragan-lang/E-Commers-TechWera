@@ -60,6 +60,7 @@ const setStoredDataVersion = (version) => localStorage.setItem(STORAGE_KEYS.data
 const readCart = () => readStorage(STORAGE_KEYS.cart) || [];
 const saveCart = (cart) => saveStorage(STORAGE_KEYS.cart, cart);
 const getProductById = (productId) => productos.find((item) => item.id === Number(productId));
+const getProductState = (producto) => (producto.stock === 0 ? 'agotado' : 'disponible');
 
 const updateCartCount = () => {
   const badge = document.getElementById('cartCount');
@@ -117,6 +118,7 @@ const addToCart = (productId, quantity = 1) => {
 
   // Reducir el stock inmediato del producto y persistir
   producto.stock = producto.stock - quantity;
+  producto.estado = getProductState(producto);
   saveStorage(STORAGE_KEYS.productos, productos);
 
   if (existingItem) {
@@ -199,7 +201,7 @@ const renderProducts = (items) => {
       <td><span class="badge-cat ${badgeClass}">${categoryName}</span></td>
       <td class="fw-bold text-price">$${producto.precio.toFixed(2)}</td>
       <td>${producto.stock}</td>
-      <td>${producto.estado}</td>
+      <td>${getProductState(producto)}</td>
       <td class="actions-cell">
         <button class="btn-sm-table btn-primary btn-add-cart" data-id="${producto.id}">Comprar</button>
         <button class="btn-sm-table btn-primary btn-edit" data-id="${producto.id}">Editar</button>
@@ -443,6 +445,8 @@ const submitProductForm = (event) => {
     });
     return;
   }
+
+  newProduct.estado = getProductState(newProduct);
 
   if (id) {
     productos = productos.map((item) => (item.id === Number(id) ? newProduct : item));
