@@ -143,6 +143,7 @@ const addToCart = (productId, quantity = 1) => {
     duration: 3000,
     gravity: 'top',
     position: 'right',
+    className: 'floating-toast',
     backgroundColor: '#16a34a'
   }).showToast();
 };

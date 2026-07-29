@@ -714,6 +714,65 @@ pre {
     background-color: rgba(59,130,246,0.15);
 }
 
+.floating-alert {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050;
+    max-width: min(400px, calc(100% - 2rem));
+    width: auto;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.toastify.floating-toast {
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    left: auto !important;
+    width: auto !important;
+    max-width: 360px !important;
+    margin: 0 !important;
+    border-radius: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28) !important;
+    backdrop-filter: blur(14px);
+    background-color: rgba(15, 23, 42, 0.92) !important;
+    color: #f8fafc !important;
+    padding: 1rem 1.1rem !important;
+    transition: transform 180ms ease, opacity 180ms ease, box-shadow 180ms ease;
+    transform: translateY(0) !important;
+}
+
+.toastify.floating-toast:hover {
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.32) !important;
+    transform: translateY(-2px) !important;
+}
+
+.toastify.floating-toast .toastify-content {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 576px) {
+    .toastify.floating-toast {
+        left: 0.75rem !important;
+        right: 0.75rem !important;
+        top: 0.75rem !important;
+        width: auto !important;
+        max-width: calc(100% - 1.5rem) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .floating-alert {
+        top: 0.75rem;
+        right: 0.75rem;
+        left: 0.75rem;
+        width: auto;
+        max-width: none;
+    }
+}
+
 /* ============================================================
    BLOQUE 18: RESPONSIVIDAD
     Ajustes para pantallas pequeñas.
